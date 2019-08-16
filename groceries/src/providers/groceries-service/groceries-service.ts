@@ -20,7 +20,7 @@ export class GroceriesServiceProvider {
   private dataChangeSubject: Subject<boolean>;
 
 // URL for service endpoint
-  baseURL = "https://wheet-groceries-server.herokuapp.com";
+  baseURL = "http://localhost:8080";
 
   constructor(public http: HttpClient) {
     console.log('Hello GroceriesServiceProvider Provider');
@@ -34,7 +34,7 @@ export class GroceriesServiceProvider {
       map(this.extractData),
       catchError(this.handleError)
     );
-  }
+  } 
 // JSON data extractor
   private extractData(res: Response){
     let body = res;
@@ -76,4 +76,4 @@ export class GroceriesServiceProvider {
     });
   }
 
-}
+} 
